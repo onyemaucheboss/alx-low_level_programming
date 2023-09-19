@@ -2,32 +2,22 @@
 
 /**
  * rev_string - Reverses a string.
- * @s: The string to be reversed.
+ * @s: input string
+ * Return: string in reverse
  */
 void rev_string(char *s)
 {
-	int length = 0;
-	int start = 0;
-	int end;
+	char rev = s[0];
+	int counter = 0;
+	int i;
 
-	/* Calculate the length of the string */
-	while (s[length] != '\0')
+	while (s[counter] != '\0')
+	counter++;
+	for (i = 0; i < counter; i++)
 	{
-		length++;
-	}
-
-	end = length - 1; /* Initialize the end index */
-
-
-	while (start < end)
-	{
-		/* Swap characters at start and end indices */
-		char temp = s[start];
-		s[start] = s[end];
-		s[end] = temp;
-
-		start++;
-		end--;
-
+		counter--;
+		rev = s[i];
+		s[i] = s[counter];
+		s[counter] = rev;
 	}
 }
