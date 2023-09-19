@@ -1,24 +1,21 @@
 #include "main.h"
-
 /**
- * puts2 - function should print only one character out of the two
- * @str: The string to be printed.
+ * puts2 - this will print all even of a string
+ *
+ * @str: the string input
+ *
+ * Return: nothing
  */
 void puts2(char *str)
 {
-	int length = 0;
+	int i;
 
-	/* Calculate the length of the string */
-	while (str[length] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		length++;
+		if (i % 2 == 0)
+		{
+			_putchar(str[i]);
+		}
 	}
-
-	/* Print every other character */
-	for (int i = 0; i < length; i += 2)
-	{
-		_putchar(str[i]);
-	}
-
-	_putchar('\n'); /* Print a new line character */
+	_putchar('\n');
 }
